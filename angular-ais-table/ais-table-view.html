@@ -1,0 +1,19 @@
+<table class="ais-table exceed-side-border">
+	<tr>
+		<th ng-repeat="header in headers">
+			{{ header }}
+		</th>
+		<th ng-if="!!buttons">
+			{{ buttonsHeader }}
+		</th>
+	</tr>
+
+	<tr ng-repeat="datum in data">
+		<td ng-repeat="cell in datum">
+			{{ cell }}
+		</td>
+		<td ng-if="!!buttons">
+			<i ng-repeat="button in buttons" class="fa fa-{{button.icon}}" aria-hidden="true" title="{{button.tooltip}}" ng-click="button.onClick(datum)"></i>
+		</td>
+	</tr>
+</table>

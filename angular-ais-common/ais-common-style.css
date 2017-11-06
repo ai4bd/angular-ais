@@ -1,0 +1,20 @@
+.contents.row {
+	margin: 0 0 16px 0;
+}
+
+.contents.row:first-child {
+	margin-top: 16px;
+}
+
+.contents.row > * {
+	margin: 0;
+}
+
+.contents.row > :not(:first-child) {
+	margin-top: 12px;
+}
+
+.contents.row > :not(.exceed-side-border) {
+	margin-left: 20px;
+	margin-right: 20px;
+}

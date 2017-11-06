@@ -1,0 +1,25 @@
+.ais-table {
+	width: 100%;
+}
+
+.ais-table th:first-child,
+.ais-table td:first-child {
+	padding-left: 20px;
+}
+
+.ais-table th:last-child,
+.ais-table td:last-child {
+	padding-right: 20px;
+}
+
+.ais-table tr:nth-child(odd):not(:first-child) {
+	background-color: #f6f6f6;
+}
+
+.ais-table tr:nth-child(even) {
+	background-color: #eaeaea;
+}
+
+.ais-table .fa:hover {
+	font-weight: bold;
+}

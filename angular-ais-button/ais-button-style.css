@@ -1,0 +1,9 @@
+.ais-button {
+	font-size: 16px;
+	width: auto;
+	padding: 0.15em 0.6em;
+}
+.ais-button :not(.fa) {
+	display: inline-block;
+	margin-left: 0.25em;
+}
