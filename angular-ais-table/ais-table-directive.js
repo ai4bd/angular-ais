@@ -5,7 +5,7 @@ angular.module('aisTable', []).directive('aisTable', function() {
 		replace: true,
 		scope: true,
 		transclude: true,
-		templateUrl: "app/components/angular-ais-table/ais-table-view.html",
+		templateUrl: "assets/ai4bd-angular-ais/angular-ais-table/ais-table-view.html",
 		link: function(scope, elem, attrs) {
 			scope.buttonsHeader = "Actions";
 			scope.$watch(attrs['ngModel'], function(value) {

@@ -5,7 +5,7 @@ angular.module('aisButton', []).directive('aisButton', function() {
 		replace: true,
 		scope: true,
 		transclude: true,
-		templateUrl: "app/components/angular-ais-button/ais-button-view.html",
+		templateUrl: "assets/ai4bd-angular-ais/angular-ais-button/ais-button-view.html",
 		link: function(scope, elem, attrs) {
 			scope.$watch(attrs['ngModel'], function(value) {
 				scope.label = value.label;
