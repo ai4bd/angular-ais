@@ -1,4 +1,6 @@
-<button class="ais-button" title="{{ label }}" ng-click="onClick()">
-	<div class="fa fa-{{ faIcon }}"></div>
-	<div>{{ label }}</div>
-</button>
+<div class="ais-button">
+	<md-button class="md-raised md-primary" ng-click="onClick($event)">
+		<i ng-if="!!faIcon" class="fa fa-{{ faIcon }}" aria-hidden="true"></i>
+		{{ label }}
+	</md-button>
+</div>

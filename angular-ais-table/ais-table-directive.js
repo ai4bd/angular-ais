@@ -1,4 +1,4 @@
-angular.module('aisTable', []).directive('aisTable', function() {
+angular.module('aisTable', ['aisCommon']).directive('aisTable', function() {
 	return {
 		require: 'ngModel',
 		restrict: 'AE',

@@ -1,4 +1,4 @@
-angular.module('aisButton', []).directive('aisButton', function() {
+angular.module('aisButton', ['aisCommon']).directive('aisButton', function() {
 	return {
 		require: 'ngModel',
 		restrict: 'AE',

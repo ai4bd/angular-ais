@@ -1,9 +1,19 @@
-.ais-button {
-	font-size: 16px;
+.ais-button button {
+	font-size: 14px;
 	width: auto;
+	height: auto;
+	line-height: 16px;
+	min-height: 32px;
+	border: none;
 	padding: 0.15em 0.6em;
+	margin: 0;
 }
-.ais-button :not(.fa) {
+
+.ais-button button:hover {
+	border: none;
+}
+
+.ais-button button > span:nth-child(2) {
 	display: inline-block;
-	margin-left: 0.25em;
+	margin-left: 0.5em;
 }
