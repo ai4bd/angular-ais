@@ -8,12 +8,15 @@
 		</th>
 	</tr>
 
-	<tr ng-repeat="datum in data">
+	<tr ng-repeat-start="datum in data" data-toggle="collapse" href="#{{$index}}">
 		<td ng-repeat="cell in datum">
 			{{ cell }}
 		</td>
 		<td ng-if="!!buttons">
 			<i ng-repeat="button in buttons" class="fa fa-{{button.icon}}" aria-hidden="true" title="{{button.tooltip}}" ng-click="button.onClick(datum)"></i>
 		</td>
+	</tr>
+	<tr ng-repeat-end id="{{$index}}" class="collapse">
+		<td colspan="100%">More information...</td>
 	</tr>
 </table>
