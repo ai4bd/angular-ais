@@ -12,6 +12,7 @@ angular.module('aisTable', ['aisCommon']).directive('aisTable', function() {
 				scope.headers = value.headers;
 				scope.data = value.data;
 				scope.buttons = value.buttons;
+				scope.collapsible = value.collapsible;
 			});
 		}
 	}

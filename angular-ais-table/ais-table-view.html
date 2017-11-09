@@ -1,4 +1,4 @@
-<table class="ais-table exceed-side-border">
+<table class="ais-table exceed-side-border" ng-class="{ collapsible: collapsible == true }">
 	<tr>
 		<th ng-repeat="header in headers">
 			{{ header }}
@@ -16,7 +16,7 @@
 			<i ng-repeat="button in buttons" class="fa fa-{{button.icon}}" aria-hidden="true" title="{{button.tooltip}}" ng-click="button.onClick(datum)"></i>
 		</td>
 	</tr>
-	<tr ng-repeat-end id="{{$index}}" class="collapse">
+	<tr ng-if="!!collapsible" ng-repeat-end id="{{$index}}" class="collapse">
 		<td colspan="100%">More information...</td>
 	</tr>
 </table>

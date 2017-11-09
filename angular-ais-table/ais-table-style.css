@@ -12,13 +12,15 @@
 	padding-right: 20px;
 }
 
-.ais-table tr:nth-of-type(4n+2),
-.ais-table tr:nth-of-type(4n+3) {
+.ais-table tr:nth-of-type(2n+1):not(:first-child),
+.ais-table.collapsible tr:nth-of-type(4n+2),
+.ais-table.collapsible tr:nth-of-type(4n+3) {
 	background-color: #f6f6f6;
 }
 
-.ais-table tr:nth-of-type(4n+4),
-.ais-table tr:nth-of-type(4n+5) {
+.ais-table tr:nth-of-type(2n+2),
+.ais-table.collapsible tr:nth-of-type(4n+4),
+.ais-table.collapsible tr:nth-of-type(4n+5) {
 	background-color: #eaeaea;
 }
 
