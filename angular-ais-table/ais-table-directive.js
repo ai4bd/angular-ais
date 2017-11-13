@@ -11,9 +11,16 @@ angular.module('aisTable', ['aisCommon']).directive('aisTable', function() {
 			scope.$watch(attrs['ngModel'], function(value) {
 				scope.headers = value.headers;
 				scope.data = value.data;
-				scope.buttons = value.buttons;
-				scope.collapsible = value.collapsible;
+				scope.getButtons = value.getButtons;
+				scope.getCollapsible = value.getCollapsible;
 			});
+		}
+	}
+}).directive('collapsibleContent', function ($compile) {
+	return {
+		link: function(scope, element, attrs) {
+			$(scope.collapsible).appendTo(element);
+			$compile(scope.collapsible)(scope);
 		}
 	}
 });

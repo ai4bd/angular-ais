@@ -1,9 +1,9 @@
-<table class="ais-table exceed-side-border" ng-class="{ collapsible: collapsible == true }">
+<table class="ais-table exceed-side-border" ng-class="{ collapsible: !!getCollapsible }">
 	<tr>
 		<th ng-repeat="header in headers">
 			{{ header }}
 		</th>
-		<th ng-if="!!buttons">
+		<th ng-if="!!getButtons">
 			{{ buttonsHeader }}
 		</th>
 	</tr>
@@ -12,11 +12,11 @@
 		<td ng-repeat="cell in datum">
 			{{ cell }}
 		</td>
-		<td ng-if="!!buttons">
-			<i ng-repeat="button in buttons" class="fa fa-{{button.icon}}" aria-hidden="true" title="{{button.tooltip}}" ng-click="button.onClick(datum)"></i>
+		<td ng-if="!!getButtons" ng-init="buttons = getButtons(datum)">
+			<i ng-repeat="button in buttons" class="fa fa-{{button.faIcon}}" aria-hidden="true" title="{{button.tooltip}}" ng-click="button.onClick(datum)"></i>
 		</td>
 	</tr>
-	<tr ng-if="!!collapsible" ng-repeat-end id="{{$index}}" class="collapse">
-		<td colspan="100%">More information...</td>
+	<tr ng-repeat-end ng-if="!!getCollapsible" ng-init="collapsible = getCollapsible(datum)" id="{{$index}}" class="collapse">
+		<td colspan="100%" collapsible-content></td>
 	</tr>
 </table>
