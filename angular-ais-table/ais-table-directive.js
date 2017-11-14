@@ -13,14 +13,15 @@ angular.module('aisTable', ['aisCommon']).directive('aisTable', function() {
 				scope.data = value.data;
 				scope.getButtons = value.getButtons;
 				scope.getCollapsible = value.getCollapsible;
+				scope.collapsibleScope = value.collapsibleScope;
 			});
 		}
 	}
 }).directive('collapsibleContent', function ($compile) {
 	return {
 		link: function(scope, element, attrs) {
-			$(scope.collapsible).appendTo(element);
-			$compile(scope.collapsible)(scope);
+			var c = $compile(scope.collapsible)(scope.collapsibleScope || scope);
+			$(c).appendTo(element);
 		}
 	}
 });
