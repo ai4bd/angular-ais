@@ -2,6 +2,12 @@
 	width: 100%;
 }
 
+.ais-table th:not(.collapsible-content),
+.ais-table td:not(.collapsible-content) {
+	padding-top: 0.25em;
+	padding-bottom: 0.25em
+}
+
 .ais-table th:first-child,
 .ais-table td:first-child {
 	padding-left: 20px;
