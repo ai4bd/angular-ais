@@ -7,9 +7,8 @@ angular.module('aisTable', ['aisCommon']).directive('aisTable', function() {
 		transclude: true,
 		templateUrl: "assets/ai4bd-angular-ais/angular-ais-table/ais-table-view.html",
 		link: function(scope, elem, attrs) {
-			scope.buttonsHeader = "Actions";
 			scope.$watch(attrs['ngModel'], function(value) {
-				scope.headers = value.headers;
+				scope.columns = value.columns;
 				scope.data = value.data;
 				scope.getButtons = value.getButtons;
 				scope.getCollapsible = value.getCollapsible;
