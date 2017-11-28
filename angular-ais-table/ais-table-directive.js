@@ -21,6 +21,10 @@ angular.module('aisTable', ['aisCommon']).directive('aisTable', function() {
 		link: function(scope, element, attrs) {
 			var c = $compile(scope.collapsible)(scope.collapsibleScope || scope);
 			$(c).appendTo(element);
+
+			$(element).parent().on('show.bs.collapse', function(event) {
+				window.dispatchEvent(new Event('resize'));
+			});
 		}
 	}
 });
