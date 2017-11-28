@@ -7,9 +7,14 @@
 
 	<tr ng-repeat-start="datum in data" data-toggle="collapse" href="#{{$index}}">
 		<td ng-repeat="column in columns">
-			<span ng-if="!column.isButtonColumn"> {{ datum[column.dataField] }} </span>
-			<span ng-if="column.isButtonColumn && !!getButtons" ng-init="buttons = getButtons(datum)">
+			<span ng-if="column.type == 'text'"> {{ datum[column.dataField] }} </span>
+			<span ng-if="column.type == 'buttons' && !!getButtons" ng-init="buttons = getButtons(datum)">
 				<i ng-repeat="button in buttons" class="fa fa-{{button.faIcon}}" aria-hidden="true" title="{{button.tooltip}}" ng-click="button.onClick(datum)"></i>
+			</span>
+			<span ng-if="column.type == 'select'">
+				<select ng-model="datum[column.dataField]">
+					<option ng-repeat="option in column.options" value="{{option.value}}">{{ option.label }}</option>
+				</select>
 			</span>
 		</td>
 	</tr>
