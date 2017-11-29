@@ -12,6 +12,9 @@ angular.module('aisButton', ['aisCommon']).directive('aisButton', function() {
 				scope.faIcon = value.faIcon;
 				scope.onClick = value.onClick;
 			});
+			scope.$watch(attrs['ngDisabled'], function(value) {
+				scope.disabled = value;
+			});
 		}
 	}
 });
