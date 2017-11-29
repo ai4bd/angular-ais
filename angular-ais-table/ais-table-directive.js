@@ -14,6 +14,16 @@ angular.module('aisTable', ['aisCommon']).directive('aisTable', function() {
 				scope.getCollapsible = value.getCollapsible;
 				scope.collapsibleScope = value.collapsibleScope;
 			});
+			scope.flipCollapseIcon = function(event) {
+				if($(event.target).hasClass("closed")) {
+					$(event.target).removeClass("closed");
+					$(event.target).addClass("opened");
+				}
+				else {
+					$(event.target).removeClass("opened");
+					$(event.target).addClass("closed");
+				}
+			}
 		}
 	}
 }).directive('collapsibleContent', function ($compile) {

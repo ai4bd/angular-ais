@@ -5,7 +5,7 @@
 		</th>
 	</tr>
 
-	<tr ng-repeat-start="datum in data" data-toggle="collapse" href="#{{$index}}">
+	<tr ng-repeat-start="datum in data">
 		<td ng-repeat="column in columns">
 			<span ng-if="column.type == 'text'"> {{ datum[column.dataField] }} </span>
 			<span ng-if="column.type == 'buttons' && !!getButtons" ng-init="buttons = getButtons(datum)">
@@ -17,8 +17,11 @@
 				</select>
 			</span>
 		</td>
+		<td ng-if="!!getCollapsible">
+			<i class="fa fa-chevron-down collapse-icon closed" aria-hidden="true" data-toggle="collapse" href="#collapsible{{$index}}" ng-click="flipCollapseIcon($event)"></i>
+		</td>
 	</tr>
-	<tr ng-repeat-end ng-if="!!getCollapsible" ng-init="collapsible = getCollapsible(datum)" id="{{$index}}" class="collapse">
+	<tr ng-repeat-end ng-if="!!getCollapsible" ng-init="collapsible = getCollapsible(datum)" id="collapsible{{$index}}" class="collapse">
 		<td colspan="100%" collapsible-content></td>
 	</tr>
 </table>
