@@ -1,5 +1,5 @@
 <div class="ais-button">
-	<md-button class="md-raised md-primary" ng-click="onClick($event)" ng-disabled="disabled">
+	<md-button class="md-raised md-primary" ng-click="onClick($event)" ng-disabled="disabled" aria-label="{{ ariaLabel }}">
 		<i ng-if="!!faIcon" class="fa fa-{{ faIcon }}" aria-hidden="true"></i>
 		<span ng-if="!!label">{{ label }}</span>
 	</md-button>
