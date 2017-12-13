@@ -1,19 +1,13 @@
-angular.module('aisTable', ['aisCommon']).directive('aisTable', function() {
+angular.module('aisTable', ['aisCommon', 'aisTextfield']).directive('aisTable', function() {
 	return {
-		require: 'ngModel',
 		restrict: 'AE',
 		replace: true,
-		scope: true,
+		scope: {
+			table: '=table'
+		},
 		transclude: true,
 		templateUrl: "assets/ai4bd-angular-ais/angular-ais-table/ais-table-view.html",
 		link: function(scope, elem, attrs) {
-			scope.$watch(attrs['ngModel'], function(value) {
-				scope.columns = value.columns;
-				scope.data = value.data;
-				scope.getButtons = value.getButtons;
-				scope.getCollapsible = value.getCollapsible;
-				scope.collapsibleScope = value.collapsibleScope;
-			});
 			scope.flipCollapseIcon = function(event) {
 				if($(event.target).hasClass("closed")) {
 					$(event.target).removeClass("closed");

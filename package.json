@@ -3,5 +3,8 @@
   "version": "1.2.0",
   "repository": "https://github.com/ai4bd/angular-ais",
   "author": "Franz Nieschalk <franz.nieschalk@ontos.com>",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "angular-editable-text": "~2.0.0"
+  }
 }

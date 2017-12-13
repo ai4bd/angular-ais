@@ -1,0 +1,9 @@
+.ais-textfield .gg-editable-text {
+	border: 1px solid transparent;
+	display: block;
+	box-sizing: border-box;
+}
+
+.ais-textfield .gg-editable-text input {
+	width: 100% !important;
+}

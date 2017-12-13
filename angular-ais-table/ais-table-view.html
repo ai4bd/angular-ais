@@ -1,15 +1,16 @@
-<table class="ais-table exceed-side-border" ng-class="{ collapsible: !!getCollapsible }">
+<table class="ais-table exceed-side-border" ng-class="{ collapsible: !!table.getCollapsible }">
 	<tr>
-		<th ng-repeat="column in columns">
+		<th ng-repeat="column in table.columns">
 			{{ column.header }}
 		</th>
 	</tr>
 
-	<tr ng-repeat-start="datum in data">
-		<td ng-repeat="column in columns">
+	<tr ng-repeat-start="datum in table.data">
+		<td ng-repeat="column in table.columns">
 			<span ng-if="column.type == 'text'"> {{ datum[column.dataField] }} </span>
-			<span ng-if="column.type == 'buttons' && !!getButtons" ng-init="buttons = getButtons(datum)">
-				<i ng-repeat="button in buttons" class="fa fa-{{button.faIcon}}" aria-hidden="true" title="{{button.tooltip}}" ng-click="button.onClick(datum)"></i>
+			<span ng-if="column.type == 'text-edit'"> <ais-textfield editable-text="datum[column.dataField]"></ais-textfield> </span>
+			<span ng-if="column.type == 'buttons' && !!table.getButtons" ng-init="buttons = table.getButtons(datum)">
+				<i ng-repeat="button in buttons" class="table-button fa fa-{{button.faIcon}}" aria-hidden="true" title="{{button.tooltip}}" ng-click="button.onClick(datum)"></i>
 			</span>
 			<span ng-if="column.type == 'select'">
 				<select ng-model="datum[column.dataField]">
