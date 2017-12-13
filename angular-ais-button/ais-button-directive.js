@@ -3,8 +3,8 @@ angular.module('aisButton', ['aisCommon']).directive('aisButton', function() {
 		restrict: 'AE',
 		replace: true,
 		scope: {
-			label: '=?label',
-			faIcon: '=?faIcon',
+			label: '@?label',
+			faIcon: '@?faIcon',
 			onClick: '=onClick'
 		},
 		transclude: true,
