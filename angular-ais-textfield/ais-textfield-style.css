@@ -1,3 +1,17 @@
+.ais-textfield {
+	position: relative;
+}
+
+.ais-textfield .action-button-container {
+	z-index: 1;
+	position: absolute;
+	right: 0;
+}
+
+.ais-textfield .action-button-container .ais-button {
+	display: inline-block;
+}
+
 .ais-textfield .gg-editable-text {
 	border: 1px solid transparent;
 	display: block;

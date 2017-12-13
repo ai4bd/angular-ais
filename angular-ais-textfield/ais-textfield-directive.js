@@ -1,4 +1,4 @@
-angular.module('aisTextfield', ['aisCommon', 'gg.editableText']).directive('aisTextfield', function() {
+angular.module('aisTextfield', ['aisCommon', 'aisButton', 'gg.editableText']).directive('aisTextfield', function() {
 	return {
 		restrict: 'AE',
 		replace: true,
@@ -14,6 +14,13 @@ angular.module('aisTextfield', ['aisCommon', 'gg.editableText']).directive('aisT
 		link: function(scope, elem, attrs) {
 			scope.isEditing = (typeof scope.isEditing === 'undefined' || scope.isEditing === null) ?  false : scope.isEditing;
 			scope.showEllipsis = (typeof scope.showEllipsis === 'undefined' || scope.showEllipsis === null) ? false : scope.showEllipsis;
+
+			scope.discardChanges = function(event) {
+				console.log("discard");
+			};
+			scope.confirmChanges = function(event) {
+				console.log("confirm");
+			};
 		}
 	}
 });
