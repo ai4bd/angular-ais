@@ -34,8 +34,10 @@
 	margin-left: 0.8em;
 }
 
-.ais-table .table-button:hover {
+.ais-table .clickable-text:hover,
+.ais-table .clickable-text:hover * {
 	font-weight: bold;
+	cursor: pointer;
 }
 
 .ais-table .collapse-icon {
