@@ -15,10 +15,10 @@ angular.module('aisTextfield', ['aisCommon', 'aisButton', 'gg.editableText']).di
 			scope.isEditing = (typeof scope.isEditing === 'undefined' || scope.isEditing === null) ?  false : scope.isEditing;
 			scope.showEllipsis = (typeof scope.showEllipsis === 'undefined' || scope.showEllipsis === null) ? false : scope.showEllipsis;
 
-			scope.discardChanges = function(event) {
+			scope.discardChanges = function() {
 				console.log("discard");
 			};
-			scope.confirmChanges = function(event) {
+			scope.confirmChanges = function() {
 				console.log("confirm");
 			};
 		}

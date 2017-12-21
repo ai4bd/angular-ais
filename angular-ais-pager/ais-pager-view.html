@@ -1,5 +1,5 @@
 <div class="ais-pager">
-	<ais-button fa-icon="chevron-left" on-click="prevPage" disabled="page <= minPage"></ais-button>
+	<ais-button fa-icon="chevron-left" on-click="prevPage()" disabled="page <= minPage"></ais-button>
 	<span>&nbsp; {{ page }} &nbsp;&#47;&nbsp; {{ maxPage }} &nbsp;</span>
-	<ais-button fa-icon="chevron-right" on-click="nextPage" disabled="page >= maxPage"></ais-button>
+	<ais-button fa-icon="chevron-right" on-click="nextPage()" disabled="page >= maxPage"></ais-button>
 </div>

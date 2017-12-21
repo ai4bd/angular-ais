@@ -5,7 +5,7 @@ angular.module('aisButton', ['aisCommon']).directive('aisButton', function() {
 		scope: {
 			label: '@?label',
 			faIcon: '@?faIcon',
-			onClick: '=onClick',
+			onClick: '&?onClick',
 			disabled: '&?disabled'
 		},
 		transclude: true,
