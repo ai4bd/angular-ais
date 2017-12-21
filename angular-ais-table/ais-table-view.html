@@ -8,10 +8,12 @@
 	<tr ng-repeat-start="datum in table.data">
 		<td ng-repeat="column in table.columns">
 			<span ng-if="column.type == 'text'"> {{ datum[column.dataField] }} </span>
-			<span ng-if="column.type == 'text-edit'"> <ais-textfield editable-text="datum[column.dataField]"></ais-textfield> </span>
+			<span ng-if="column.type == 'text-edit'">
+				<ais-textfield editable-text="datum[column.dataField]" on-change="column.onChange(datum, value)"></ais-textfield>
+			</span>
 			<span ng-if="column.type == 'text-button'" class="clickable-text" ng-click="column.onClick(datum)" title="{{column.tooltip}}">
-					<i class="table-button fa fa-{{column.faIcon}}" aria-hidden="true"></i>
-					{{ datum[column.dataField] }}
+				<i class="table-button fa fa-{{column.faIcon}}" aria-hidden="true"></i>
+				{{ datum[column.dataField] }}
 			</span>
 			<span ng-if="column.type == 'buttons' && !!table.getButtons" ng-init="buttons = table.getButtons(datum)">
 				<i ng-repeat="button in buttons" class="clickable-text table-button fa fa-{{button.faIcon}}" aria-hidden="true" title="{{button.tooltip}}" ng-click="button.onClick(datum)"></i>

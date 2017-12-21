@@ -7,7 +7,8 @@ angular.module('aisTextfield', ['aisCommon', 'aisButton', 'gg.editableText']).di
 			isEditing: '=?isEditing',
 			showEllipsis: '=?showEllipsis',
 			placeholder: '@?',
-			autocomplete: '@?'
+			autocomplete: '@?',
+			onChange: '&?'
 		},
 		transclude: true,
 		templateUrl: "assets/ai4bd-angular-ais/angular-ais-textfield/ais-textfield-view.html",
